@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>303 Creative Agency® — Branding & Marketing Strategy</title>
+<meta name="description" content="Convertimos negocios en marcas que venden. Estrategia, identidad visual y percepción de alto nivel para negocios en Miami y más allá.">
+<meta name="keywords" content="branding, marketing, agencia creativa, Miami, identidad visual, estrategia de marca, diseño">
+<meta name="author" content="303 Creative Agency">
+<meta property="og:title" content="303 Creative Agency® — Branding & Marketing Strategy">
+<meta property="og:description" content="Convertimos negocios en marcas que venden. Estrategia, identidad visual y dirección creativa.">
+<meta property="og:image" content="/logo.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800&family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black: #0a0a0a;
+  --white: #fafafa;
+  --gray-50: #f5f5f7;
+  --gray-100: #e8e8ed;
+  --gray-200: #d2d2d7;
+  --gray-400: #86868b;
+  --gray-600: #6e6e73;
+  --gray-800: #333336;
+  --accent: #c8a97e;
+  --accent-light: #e4d5c1;
+  --accent-dark: #a68b5e;
+  --gradient-warm: linear-gradient(135deg, #f5e6d3, #f0d4b8, #e8c9a0, #dbb888);
+  --gradient-sunset: linear-gradient(135deg, #f093fb, #f5576c, #fda085);
+  --gradient-dark: linear-gradient(135deg, #0a0a0a, #1a1a2e, #16213e);
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-heading: 'Outfit', sans-serif;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; font-size: 16px; -webkit-font-smoothing: antialiased; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--white);
+  color: var(--black);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* ══════ NAV ══════ */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 0 48px; height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  background: transparent;
+  border-bottom: 0.5px solid transparent;
+  transition: all 0.4s var(--ease-out);
+}
+.nav.scrolled { background: rgba(250,250,250,0.95); border-bottom-color: rgba(0,0,0,0.06); }
+.nav-logo { height: 28px; opacity: 0.9; transition: all 0.3s; filter: brightness(0) invert(1); }
+.nav.scrolled .nav-logo { filter: none; }
+.nav-logo:hover { opacity: 1; }
+.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links a {
+  font-family: var(--font-body); font-size: 0.78rem; font-weight: 400;
+  color: rgba(255,255,255,0.6); text-decoration: none; letter-spacing: 0.02em;
+  transition: color 0.3s;
+}
+.nav.scrolled .nav-links a { color: var(--gray-600); }
+.nav-links a:hover { color: var(--white); }
+.nav.scrolled .nav-links a:hover { color: var(--black); }
+.nav-cta {
+  font-family: var(--font-body); font-size: 0.72rem; font-weight: 500;
+  padding: 8px 20px; background: var(--white); color: var(--black);
+  border: none; border-radius: 980px; cursor: pointer; text-decoration: none;
+  transition: all 0.3s var(--ease-out);
+}
+.nav.scrolled .nav-cta { background: var(--black); color: var(--white); }
+.nav-cta:hover { background: var(--accent); transform: scale(1.04); }
+
+/* ══════ HERO ══════ */
+.hero {
+  min-height: 100svh;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; padding: 80px 24px 60px;
+  position: relative; overflow: hidden;
+  background: var(--black);
+}
+
+/* Gradient orbs */
+.hero-orb {
+  position: absolute; width: 700px; height: 700px;
+  border-radius: 50%; filter: blur(120px); opacity: 0.18;
+  animation: orbFloat 12s ease-in-out infinite;
+  pointer-events: none;
+}
+.hero-orb-1 {
+  background: linear-gradient(135deg, #c8a97e, #a68b5e);
+  top: -200px; right: -100px;
+}
+.hero-orb-2 {
+  background: linear-gradient(135deg, #e8c9a0, #dbb888);
+  bottom: -200px; left: -150px;
+  animation-delay: -6s;
+}
+
+@keyframes orbFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -20px) scale(1.05); }
+  66% { transform: translate(-20px, 15px) scale(0.95); }
+}
+
+/* Manifesto text */
+.hero-manifesto { margin-bottom: 36px; }
+.manifesto-line { line-height: 1.1; }
+.strikethrough {
+  font-family: var(--font-heading); font-size: clamp(3rem, 8vw, 6.5rem);
+  font-weight: 300; color: rgba(255,255,255,0.3);
+  text-decoration: line-through; text-decoration-thickness: 2px;
+  text-decoration-color: rgba(255,255,255,0.45);
+  letter-spacing: -0.03em; display: inline-block;
+}
+.manifesto-bold {
+  font-family: var(--font-heading); font-size: clamp(3.5rem, 9vw, 7.5rem);
+  font-weight: 800; color: var(--white);
+  letter-spacing: -0.04em; display: block; margin-top: 4px;
+}
+.manifesto-bold em {
+  font-style: normal;
+  background: linear-gradient(135deg, #c8a97e, #dbb888, #e4d5c1);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+
+.hero-divider {
+  width: 60px; height: 1px; margin: 0 auto 32px;
+  background: linear-gradient(to right, transparent, var(--accent), transparent);
+}
+
+.hero-logo-main {
+  width: 200px; margin-bottom: 24px;
+  filter: brightness(0) invert(1); opacity: 0.8;
+}
+
+.hero-sub {
+  font-family: var(--font-body); font-size: clamp(0.9rem, 1.4vw, 1.05rem);
+  font-weight: 300; color: rgba(255,255,255,0.4); max-width: 480px; line-height: 1.7;
+  margin-bottom: 44px;
+}
+
+.hero-buttons {
+  display: flex; gap: 16px; align-items: center;
+}
+
+/* Hero reveal animations */
+.reveal-hero {
+  opacity: 0; transform: translateY(30px);
+  animation: fadeUp 1s var(--ease-out) forwards;
+}
+.reveal-hero-1 { animation-delay: 0.3s; }
+.reveal-hero-2 { animation-delay: 0.7s; }
+.reveal-hero-3 { animation-delay: 1s; }
+.hero-logo-main { opacity: 0; animation: fadeUp 1s var(--ease-out) 1.2s forwards; }
+.hero-sub { opacity: 0; animation: fadeUp 1s var(--ease-out) 1.4s forwards; }
+.hero-buttons { opacity: 0; animation: fadeUp 1s var(--ease-out) 1.6s forwards; }
+
+
+.hero-scroll {
+  position: absolute; bottom: 36px;
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  opacity: 0; animation: fadeUp 1s var(--ease-out) 2s forwards;
+}
+.hero-scroll span { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.2); }
+.scroll-line { width: 1px; height: 44px; background: linear-gradient(to bottom, rgba(255,255,255,0.15), transparent); animation: scrollPulse 2s ease-in-out infinite; }
+
+/* ══════ SHARED ══════ */
+section { padding: 130px 24px; }
+.section-inner { max-width: 1100px; margin: 0 auto; }
+
+/* ══════ BUTTONS — MODERN ══════ */
+.btn-primary {
+  font-family: var(--font-body); font-size: 0.88rem; font-weight: 500;
+  padding: 16px 36px; background: var(--black); color: var(--white);
+  border: none; border-radius: 14px; cursor: pointer; text-decoration: none;
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: all 0.4s var(--ease-out);
+  position: relative; overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.btn-primary::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, var(--accent-dark), var(--accent));
+  opacity: 0; transition: opacity 0.4s;
+}
+.btn-primary:hover::before { opacity: 1; }
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(166,139,94,0.3);
+}
+.btn-primary span { position: relative; z-index: 1; }
+.btn-primary::after {
+  content: '→'; position: relative; z-index: 1;
+  font-size: 1rem; transition: transform 0.3s var(--ease-out);
+}
+.btn-primary:hover::after { transform: translateX(4px); }
+
+.btn-secondary {
+  font-family: var(--font-body); font-size: 0.88rem; font-weight: 500;
+  padding: 16px 36px; background: transparent; color: var(--black);
+  border: 1.5px solid var(--gray-200); border-radius: 14px; cursor: pointer;
+  text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+  transition: all 0.4s var(--ease-out);
+}
+.btn-secondary:hover {
+  border-color: var(--accent); color: var(--accent-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+}
+
+/* Dark hero button overrides */
+.hero .btn-primary { background: var(--white); color: var(--black); border-radius: 14px; }
+.hero .btn-primary::before { background: linear-gradient(135deg, var(--accent), var(--accent-light)); }
+.hero .btn-primary:hover { box-shadow: 0 12px 40px rgba(200,169,126,0.35); }
+.hero .btn-secondary { color: rgba(255,255,255,0.6); border-color: rgba(255,255,255,0.12); border-radius: 14px; }
+.hero .btn-secondary:hover { border-color: rgba(255,255,255,0.4); color: var(--white); }
+
+.btn-primary-light {
+  font-family: var(--font-body); font-size: 0.88rem; font-weight: 500;
+  padding: 16px 42px; border: none; border-radius: 14px; cursor: pointer;
+  text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+  position: relative; overflow: hidden;
+  background: linear-gradient(135deg, var(--white), var(--gray-50));
+  color: var(--black); transition: all 0.4s var(--ease-out);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.btn-primary-light::after { content: '→'; transition: transform 0.3s var(--ease-out); }
+.btn-primary-light:hover::after { transform: translateX(4px); }
+.btn-primary-light:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(200,169,126,0.3);
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+}
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.section-tag {
+  font-family: var(--font-body); font-size: 0.68rem; font-weight: 500;
+  letter-spacing: 0.25em; text-transform: uppercase;
+  background: linear-gradient(135deg, var(--accent-dark), var(--accent));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  margin-bottom: 16px;
+}
+.section-title {
+  font-family: var(--font-heading); font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+  font-weight: 700; line-height: 1.08; letter-spacing: -0.03em;
+  color: var(--black); margin-bottom: 20px;
+}
+.section-desc {
+  font-family: var(--font-body); font-size: 1.05rem; font-weight: 300;
+  color: var(--gray-600); max-width: 560px; line-height: 1.7;
+}
+
+/* ══════ ABOUT / NOSOTROS ══════ */
+.about { background: var(--white); overflow: hidden; position: relative; }
+.about .section-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.about-content { max-width: 520px; }
+.about-content .section-desc { margin-bottom: 40px; }
+
+.about-values {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+}
+.about-value {
+  padding: 24px; border-radius: 16px; border: 1px solid var(--gray-100);
+  transition: all 0.5s var(--ease-out); transform-style: preserve-3d;
+}
+.about-value:hover {
+  border-color: var(--accent-light);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.05);
+}
+.about-value h4 {
+  font-family: var(--font-heading); font-size: 0.95rem; font-weight: 600;
+  margin-bottom: 6px; color: var(--black);
+}
+.about-value p {
+  font-size: 0.78rem; font-weight: 300; color: var(--gray-600); line-height: 1.55;
+}
+.about-value .val-icon {
+  font-size: 1.1rem; margin-bottom: 12px; display: block;
+}
+
+.about-visual {
+  position: relative; display: flex; align-items: center; justify-content: center;
+  min-height: 480px;
+}
+.about-glass-card {
+  width: 340px; padding: 44px 36px; border-radius: 28px;
+  background: linear-gradient(145deg, rgba(255,255,255,0.9), rgba(245,245,247,0.8));
+  border: 1px solid var(--gray-100);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.06);
+  position: relative; z-index: 2;
+  transform-style: preserve-3d;
+  transition: all 0.6s var(--ease-out);
+}
+.about-glass-card:hover {
+  transform: translateY(-6px) rotateX(2deg);
+  box-shadow: 0 40px 100px rgba(0,0,0,0.1);
+}
+.about-glass-card .stat {
+  text-align: center; padding: 20px 0;
+  border-bottom: 1px solid var(--gray-100);
+}
+.about-glass-card .stat:last-child { border-bottom: none; }
+.about-glass-card .stat .stat-num {
+  font-family: var(--font-heading); font-size: 2.2rem; font-weight: 700;
+  background: linear-gradient(135deg, var(--accent-dark), var(--accent));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  line-height: 1;
+}
+.about-glass-card .stat .stat-label {
+  font-size: 0.75rem; font-weight: 400; color: var(--gray-600); margin-top: 4px;
+}
+
+.about-orb-bg {
+  position: absolute; width: 400px; height: 400px; border-radius: 50%;
+  background: linear-gradient(135deg, rgba(200,169,126,0.15), rgba(228,213,193,0.1));
+  filter: blur(80px); top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  animation: orbFloat 10s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.about-mission {
+  margin-top: 48px; padding: 32px 0; border-top: 1px solid var(--gray-100);
+}
+.about-mission p {
+  font-family: var(--font-body); font-size: 1.05rem; font-weight: 300;
+  font-style: italic; color: var(--gray-600); line-height: 1.7;
+  max-width: 520px;
+}
+.about-mission p em {
+  font-style: normal; color: var(--accent-dark); font-weight: 500;
+}
+
+@media (max-width: 900px) {
+  .about .section-inner { grid-template-columns: 1fr; gap: 48px; }
+  .about-visual { min-height: 320px; }
+  .about-glass-card { width: 100%; max-width: 340px; }
+  .about-values { grid-template-columns: 1fr; }
+}
+
+/* ══════ PROBLEM — 3D CARDS ══════ */
+.problem {
+  background: var(--black); color: var(--white); text-align: center;
+  position: relative; overflow: hidden;
+}
+.problem::before {
+  content: ''; position: absolute; top: -300px; left: 50%;
+  transform: translateX(-50%);
+  width: 900px; height: 600px;
+  background: radial-gradient(ellipse, rgba(200,169,126,0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+.problem .section-tag {
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  -webkit-background-clip: text; background-clip: text;
+}
+.problem .section-title { color: var(--white); max-width: 800px; margin: 0 auto 56px; }
+
+.problem-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;
+  max-width: 900px; margin: 0 auto;
+  perspective: 1200px;
+}
+.problem-card {
+  background: linear-gradient(145deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 20px; padding: 44px 36px; text-align: left;
+  transition: all 0.6s var(--ease-out);
+  transform-style: preserve-3d;
+  position: relative; overflow: hidden;
+}
+.problem-card::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(200,169,126,0.08), transparent 60%);
+  opacity: 0; transition: opacity 0.5s; border-radius: 20px;
+}
+.problem-card:hover {
+  transform: translateY(-6px) rotateX(2deg) rotateY(-1deg);
+  border-color: rgba(200,169,126,0.2);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+}
+.problem-card:hover::before { opacity: 1; }
+.problem-card .num {
+  font-family: var(--font-display); font-size: 0.6rem; letter-spacing: 0.25em;
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  margin-bottom: 18px; display: block;
+}
+.problem-card h3 {
+  font-family: var(--font-heading); font-size: 1.15rem; font-weight: 600;
+  color: var(--white); margin-bottom: 10px; line-height: 1.3;
+  position: relative; z-index: 1;
+}
+.problem-card p { font-size: 0.88rem; font-weight: 300; color: rgba(255,255,255,0.5); line-height: 1.65; position: relative; z-index: 1; }
+
+/* ══════ SOLUTION — 3D PILLARS ══════ */
+.solution { text-align: center; background: var(--white); position: relative; overflow: hidden; }
+.solution .section-desc { margin: 0 auto 72px; }
+
+.pillars {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  max-width: 1040px; margin: 0 auto; perspective: 1500px;
+}
+.pillar {
+  padding: 52px 32px; text-align: center; border-radius: 24px;
+  border: 1px solid var(--gray-100); background: var(--white);
+  transition: all 0.6s var(--ease-out); position: relative; overflow: hidden;
+  transform-style: preserve-3d;
+}
+.pillar::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(to right, var(--accent-dark), var(--accent), var(--accent-light));
+  opacity: 0; transition: opacity 0.4s;
+}
+.pillar:hover::before { opacity: 1; }
+.pillar:hover {
+  transform: translateY(-8px) rotateX(3deg);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.08);
+  border-color: var(--accent-light);
+}
+.pillar-icon {
+  width: 56px; height: 56px; border-radius: 16px;
+  background: var(--gray-50); display: flex; align-items: center;
+  justify-content: center; margin: 0 auto 24px; font-size: 1.4rem;
+  transition: all 0.5s var(--ease-out);
+}
+.pillar:hover .pillar-icon {
+  background: linear-gradient(135deg, var(--accent-light), var(--accent));
+  transform: scale(1.08) translateZ(10px);
+}
+.pillar h3 { font-family: var(--font-heading); font-size: 1.2rem; font-weight: 600; margin-bottom: 12px; }
+.pillar p { font-size: 0.9rem; font-weight: 300; color: var(--gray-600); line-height: 1.65; }
+
+/* ══════ PROCESS ══════ */
+.process { background: var(--gray-50); }
+.process .section-inner { text-align: center; }
+.process .section-desc { margin: 0 auto 72px; }
+
+.process-steps {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+  max-width: 1040px; margin: 0 auto; position: relative;
+}
+.process-steps::before {
+  content: ''; position: absolute; top: 34px; left: 12%; right: 12%; height: 1.5px;
+  background: linear-gradient(to right, transparent, var(--accent-light), var(--accent), var(--accent-light), transparent);
+}
+.step { text-align: center; padding: 0 20px; position: relative; }
+.step-num {
+  width: 68px; height: 68px; border-radius: 50%;
+  background: var(--white); border: 2px solid var(--gray-200);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 26px; font-family: var(--font-display);
+  font-size: 0.85rem; font-weight: 700;
+  background: linear-gradient(135deg, var(--accent-dark), var(--accent));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  transition: all 0.5s var(--ease-out); position: relative; z-index: 2;
+}
+.step:hover .step-num {
+  border-color: var(--accent);
+  transform: scale(1.12) translateY(-4px);
+  box-shadow: 0 12px 30px rgba(166,139,94,0.2);
+  background: var(--black);
+  -webkit-background-clip: unset; -webkit-text-fill-color: var(--accent);
+}
+.step h4 { font-family: var(--font-heading); font-size: 1.02rem; font-weight: 600; margin-bottom: 8px; }
+.step p { font-size: 0.82rem; font-weight: 300; color: var(--gray-600); line-height: 1.6; }
+
+/* ══════ PORTFOLIO — 3D HOVER ══════ */
+.portfolio { background: var(--white); }
+.portfolio .section-desc { margin-bottom: 64px; }
+
+.cases-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 1100px;
+  perspective: 1500px;
+}
+.case-card {
+  position: relative; border-radius: 24px; overflow: hidden;
+  aspect-ratio: 16/10; cursor: pointer;
+  transform-style: preserve-3d;
+  transition: all 0.7s var(--ease-out);
+}
+.case-card:hover { transform: translateY(-8px) rotateX(2deg) rotateY(-2deg); box-shadow: 0 40px 80px rgba(0,0,0,0.2); }
+
+.case-card:nth-child(1) { background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); }
+.case-card:nth-child(2) { background: linear-gradient(135deg, #2d1b2e, #6b2d5b, #a64d79); }
+.case-card:nth-child(3) { background: linear-gradient(135deg, #0d2818, #1a4731, #2d6a4f); }
+.case-card:nth-child(4) { background: linear-gradient(135deg, #2d2a1b, #6b5b2d, #a68b5e); }
+
+.case-inner-orb {
+  position: absolute; width: 250px; height: 250px; border-radius: 50%;
+  top: 50%; left: 50%; transform: translate(-50%, -50%);
+  filter: blur(60px); opacity: 0.4; pointer-events: none;
+  transition: all 0.6s var(--ease-out);
+}
+.case-card:nth-child(1) .case-inner-orb { background: #667eea; }
+.case-card:nth-child(2) .case-inner-orb { background: #f093fb; }
+.case-card:nth-child(3) .case-inner-orb { background: #38ef7d; }
+.case-card:nth-child(4) .case-inner-orb { background: #f5af19; }
+.case-card:hover .case-inner-orb { opacity: 0.6; transform: translate(-50%, -50%) scale(1.3); }
+
+.case-deco {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 130px; height: 130px; border-radius: 28px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(12px); display: flex; align-items: center;
+  justify-content: center; font-family: var(--font-display);
+  font-size: 0.6rem; letter-spacing: 0.3em; color: rgba(255,255,255,0.4);
+  text-transform: uppercase; transition: all 0.6s var(--ease-out);
+}
+.case-card:hover .case-deco {
+  transform: translate(-50%, -50%) scale(1.15) rotate(5deg);
+  border-color: rgba(255,255,255,0.25); color: rgba(255,255,255,0.7);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+
+.case-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(10,10,10,0.9) 0%, transparent 55%);
+  display: flex; flex-direction: column; justify-content: flex-end; padding: 36px;
+  opacity: 0; transition: opacity 0.5s var(--ease-out);
+}
+.case-card:hover .case-overlay { opacity: 1; }
+.case-overlay.case-overlay-visible { opacity: 1; }
+.case-overlay span { font-size: 0.6rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+.case-overlay h3 { font-family: var(--font-heading); font-size: 1.4rem; font-weight: 600; color: var(--white); margin-bottom: 6px; }
+.case-overlay p { font-size: 0.82rem; color: rgba(255,255,255,0.55); font-weight: 300; }
+
+/* ══════ SOCIAL PROOF ══════ */
+.social-proof {
+  background: var(--black); color: var(--white); text-align: center;
+  padding: 110px 24px; position: relative; overflow: hidden;
+}
+.social-proof::after {
+  content: ''; position: absolute; bottom: -200px; left: 50%;
+  transform: translateX(-50%); width: 800px; height: 400px;
+  background: radial-gradient(ellipse, rgba(200,169,126,0.06) 0%, transparent 70%);
+}
+.social-proof .section-tag {
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  -webkit-background-clip: text; background-clip: text;
+}
+
+.metrics { display: flex; justify-content: center; gap: 80px; max-width: 800px; margin: 64px auto 0; }
+.metric-item { text-align: center; }
+.metric-item .number {
+  font-family: var(--font-heading); font-size: clamp(2.5rem, 5vw, 3.8rem);
+  font-weight: 700; line-height: 1; margin-bottom: 8px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.metric-item .label { font-size: 0.78rem; font-weight: 300; color: rgba(255,255,255,0.45); }
+
+.testimonial-area { max-width: 620px; margin: 72px auto 0; }
+.testimonial-quote {
+  font-size: 1.15rem; font-weight: 300; font-style: italic;
+  color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: 24px;
+  position: relative;
+}
+.testimonial-quote::before {
+  content: '"'; font-family: var(--font-display); font-size: 4rem;
+  position: absolute; top: -30px; left: -10px; opacity: 0.3;
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.testimonial-author { font-size: 0.82rem; color: var(--accent); font-weight: 500; }
+.testimonial-role { font-size: 0.75rem; color: rgba(255,255,255,0.3); margin-top: 4px; }
+
+/* ══════ SERVICES — 3D GRID ══════ */
+.services { background: var(--white); text-align: center; }
+.services .section-desc { margin: 0 auto 64px; }
+
+.services-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+  max-width: 1100px; margin: 0 auto; perspective: 1500px;
+}
+.service-item {
+  padding: 48px 32px; text-align: left; border-radius: 24px;
+  border: 1px solid var(--gray-100); background: var(--white);
+  transition: all 0.6s var(--ease-out); transform-style: preserve-3d;
+  position: relative; overflow: hidden;
+}
+.service-item::after {
+  content: ''; position: absolute; inset: 0; border-radius: 24px;
+  background: linear-gradient(145deg, rgba(200,169,126,0.05), transparent 50%);
+  opacity: 0; transition: opacity 0.4s;
+}
+.service-item:hover::after { opacity: 1; }
+.service-item:hover {
+  transform: translateY(-8px) rotateX(2deg);
+  border-color: var(--accent-light);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.06);
+}
+.service-item .service-label {
+  font-family: var(--font-display); font-size: 0.58rem; letter-spacing: 0.3em;
+  text-transform: uppercase; margin-bottom: 20px; display: block;
+  background: linear-gradient(135deg, var(--accent-dark), var(--accent));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.service-item h3 { font-family: var(--font-heading); font-size: 1.35rem; font-weight: 600; margin-bottom: 14px; position: relative; z-index: 1; }
+.service-item p { font-size: 0.88rem; font-weight: 300; color: var(--gray-600); line-height: 1.65; margin-bottom: 24px; position: relative; z-index: 1; }
+.service-features { list-style: none; position: relative; z-index: 1; }
+.service-features li {
+  font-size: 0.78rem; color: var(--gray-600); padding: 7px 0;
+  border-top: 1px solid var(--gray-100); display: flex; align-items: center; gap: 8px;
+}
+.service-features li::before { content: '→'; color: var(--accent-dark); font-size: 0.7rem; }
+
+/* Pricing card extras */
+.service-price {
+  font-family: var(--font-heading); font-size: 2.4rem; font-weight: 700;
+  color: var(--black); margin-bottom: 12px; line-height: 1;
+}
+.service-price span {
+  font-size: 0.85rem; font-weight: 400; color: var(--gray-400);
+}
+.service-item-featured {
+  border-color: var(--accent); position: relative;
+  box-shadow: 0 8px 40px rgba(166,139,94,0.12);
+}
+.service-item-featured::after { opacity: 0.5; }
+.service-badge {
+  position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+  font-family: var(--font-body); font-size: 0.68rem; font-weight: 600;
+  padding: 5px 16px; background: linear-gradient(135deg, var(--accent-dark), var(--accent));
+  color: var(--white); border-radius: 980px; letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+.service-item .btn-full { width: 100%; justify-content: center; margin-top: 20px; }
+.services-footnote {
+  text-align: center; margin-top: 48px; font-size: 0.9rem; color: var(--gray-600);
+}
+.link-accent {
+  color: var(--accent-dark); text-decoration: none; font-weight: 500;
+  transition: color 0.3s;
+}
+.link-accent:hover { color: var(--black); }
+
+/* Form note */
+.form-note {
+  font-size: 0.72rem; color: var(--gray-400); text-align: center;
+  margin-top: 12px;
+}
+
+/* ══════ TRANSFORMATION CARD ══════ */
+.transformation-card {
+  margin-top: 40px; padding: 52px 48px; border-radius: 28px;
+  background: linear-gradient(135deg, #0a0a0a, #1a1a1a, #0f0f1a);
+  border: 1px solid rgba(200,169,126,0.2);
+  position: relative; overflow: hidden;
+  display: flex; align-items: center;
+  transition: all 0.6s var(--ease-out);
+}
+.transformation-card:hover {
+  border-color: rgba(200,169,126,0.4);
+  box-shadow: 0 30px 80px rgba(200,169,126,0.12);
+  transform: translateY(-4px);
+}
+.transformation-glow {
+  position: absolute; top: -100px; right: -100px;
+  width: 400px; height: 400px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,169,126,0.15) 0%, transparent 70%);
+  filter: blur(60px); pointer-events: none;
+  animation: orbFloat 8s ease-in-out infinite;
+}
+.transformation-content { position: relative; z-index: 2; max-width: 700px; }
+.transformation-content h3 {
+  font-family: var(--font-heading); font-size: 2rem; font-weight: 700;
+  color: var(--white); margin-bottom: 8px;
+}
+.transformation-content p {
+  font-size: 0.9rem; font-weight: 300; color: rgba(255,255,255,0.5);
+  line-height: 1.65; margin-bottom: 28px; max-width: 560px;
+}
+.btn-transformation {
+  font-family: var(--font-body); font-size: 0.88rem; font-weight: 500;
+  padding: 16px 36px; border: none; border-radius: 14px; cursor: pointer;
+  text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+  background: linear-gradient(135deg, var(--accent-dark), var(--accent), var(--accent-light));
+  color: var(--black); transition: all 0.4s var(--ease-out);
+  box-shadow: 0 4px 20px rgba(200,169,126,0.3);
+}
+.btn-transformation span { position: relative; z-index: 1; }
+.btn-transformation::after { content: '→'; transition: transform 0.3s var(--ease-out); }
+.btn-transformation:hover::after { transform: translateX(4px); }
+.btn-transformation:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(200,169,126,0.5);
+}
+
+@media (max-width: 600px) {
+  .transformation-card { padding: 36px 24px; }
+}
+
+/* ══════ NOISE TEXTURE OVERLAY ══════ */
+.noise-bg { position: relative; }
+.noise-bg::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat; background-size: 200px;
+}
+
+/* ══════ SCROLL REVEAL ENHANCED ══════ */
+.reveal {
+  opacity: 0; transform: translateY(50px);
+  transition: opacity 1s var(--ease-out), transform 1s var(--ease-out);
+}
+.reveal.visible {
+  opacity: 1; transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* Parallax-style scale on scroll */
+.parallax-scale {
+  transition: transform 0.6s var(--ease-out);
+}
+
+/* ══════ GRADIENT SECTION BACKGROUNDS ══════ */
+.about {
+  background: linear-gradient(180deg, var(--white) 0%, var(--gray-50) 100%);
+}
+.process {
+  background: linear-gradient(180deg, var(--gray-50) 0%, var(--white) 50%, var(--gray-50) 100%);
+}
+.services {
+  background: linear-gradient(180deg, var(--white) 0%, #f8f5f0 50%, var(--white) 100%);
+}
+.audit {
+  background: linear-gradient(180deg, var(--gray-50) 0%, #f0ebe3 50%, var(--gray-50) 100%);
+}
+.problem {
+  background: linear-gradient(180deg, #0a0a0a 0%, #111115 50%, #0a0a0a 100%);
+}
+.social-proof {
+  background: linear-gradient(180deg, #0a0a0a 0%, #0f0f14 50%, #0a0a0a 100%);
+}
+
+/* ══════ AUDIT — GRADIENT CARD ══════ */
+.audit { background: var(--gray-50); text-align: center; }
+.audit-card {
+  max-width: 740px; margin: 48px auto 0; padding: 64px 48px;
+  background: var(--white); border-radius: 28px;
+  border: 1px solid var(--gray-100); position: relative; overflow: hidden;
+  transform-style: preserve-3d; transition: all 0.6s var(--ease-out);
+}
+.audit-card:hover { transform: translateY(-6px); box-shadow: 0 30px 80px rgba(0,0,0,0.06); }
+.audit-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  background: linear-gradient(to right, var(--accent-dark), var(--accent), var(--accent-light), var(--accent));
+  background-size: 300% 100%; animation: gradientShift 4s ease infinite;
+}
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+.audit-price {
+  font-family: var(--font-heading); font-size: 3.2rem; font-weight: 700;
+  background: linear-gradient(135deg, var(--black), var(--gray-800));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  margin-bottom: 8px;
+}
+.audit-price span { font-size: 1rem; font-weight: 400; -webkit-text-fill-color: var(--gray-400); }
+.audit-card h3 { font-family: var(--font-heading); font-size: 1.6rem; font-weight: 600; margin-bottom: 12px; }
+.audit-card > p { font-size: 0.95rem; font-weight: 300; color: var(--gray-600); max-width: 480px; margin: 0 auto 32px; line-height: 1.65; }
+.audit-features { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 24px; max-width: 420px; margin: 0 auto 36px; text-align: left; }
+.audit-features li {
+  list-style: none; font-size: 0.82rem; color: var(--gray-800);
+  display: flex; align-items: center; gap: 8px;
+}
+.audit-features li::before { content: '✓'; color: var(--accent-dark); font-weight: 700; font-size: 0.75rem; }
+
+/* Form styles */
+.audit-form { max-width: 480px; margin: 0 auto; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+.form-input {
+  font-family: var(--font-body); font-size: 0.85rem; padding: 14px 18px;
+  border: 1.5px solid var(--gray-100); border-radius: 12px; background: var(--gray-50);
+  color: var(--black); outline: none; transition: all 0.3s var(--ease-out);
+  width: 100%;
+}
+.form-input:focus { border-color: var(--accent); background: var(--white); box-shadow: 0 0 0 3px rgba(200,169,126,0.1); }
+.form-input::placeholder { color: var(--gray-400); }
+.btn-full { width: 100%; justify-content: center; margin-top: 8px; }
+
+@media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
+
+/* ══════ FINAL CTA ══════ */
+.final-cta {
+  background: var(--black); color: var(--white); text-align: center;
+  padding: 150px 24px; position: relative; overflow: hidden;
+}
+.final-cta-orb {
+  position: absolute; width: 500px; height: 500px; border-radius: 50%;
+  bottom: -150px; left: 50%; transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(200,169,126,0.12) 0%, transparent 70%);
+  filter: blur(80px); animation: orbFloat 10s ease-in-out infinite;
+}
+.final-cta h2 {
+  font-family: var(--font-heading); font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 700; line-height: 1.1; letter-spacing: -0.025em;
+  max-width: 700px; margin: 0 auto 20px;
+}
+.final-cta h2 em {
+  font-style: normal;
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.final-cta p { font-size: 1rem; font-weight: 300; color: rgba(255,255,255,0.45); max-width: 460px; margin: 0 auto 44px; line-height: 1.65; }
+
+
+/* ══════ FOOTER ══════ */
+.footer {
+  background: var(--black); border-top: 1px solid rgba(255,255,255,0.04);
+  padding: 56px 48px 36px; color: rgba(255,255,255,0.4);
+}
+.footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; }
+.footer-logo { height: 24px; opacity: 0.7; margin-bottom: 14px; }
+.footer-tagline { font-size: 0.75rem; font-weight: 300; color: rgba(255,255,255,0.25); max-width: 260px; line-height: 1.5; }
+.footer-links { display: flex; gap: 48px; }
+.footer-col h4 {
+  font-family: var(--font-heading); font-size: 0.68rem; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.5);
+  margin-bottom: 16px;
+}
+.footer-col a { display: block; font-size: 0.78rem; color: rgba(255,255,255,0.3); text-decoration: none; padding: 4px 0; transition: color 0.3s; }
+.footer-col a:hover { color: var(--accent); }
+.footer-bottom {
+  max-width: 1100px; margin: 40px auto 0; padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.04);
+  display: flex; justify-content: space-between; align-items: center; font-size: 0.68rem;
+}
+.footer-social { display: flex; gap: 20px; }
+.footer-social a { color: rgba(255,255,255,0.25); text-decoration: none; font-size: 0.72rem; transition: color 0.3s; }
+.footer-social a:hover { color: var(--accent); }
+
+/* ══════ ANIMATIONS ══════ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.4; transform: scaleY(1); }
+  50% { opacity: 1; transform: scaleY(1.3); }
+}
+
+/* ══════ RESPONSIVE ══════ */
+@media (max-width: 900px) {
+  .nav { padding: 0 20px; }
+  .nav-links { display: none; }
+  .problem-grid, .cases-grid { grid-template-columns: 1fr; }
+  .pillars, .services-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+  .process-steps { grid-template-columns: repeat(2, 1fr); gap: 36px; }
+  .process-steps::before { display: none; }
+  .metrics { flex-direction: column; gap: 36px; }
+  .footer-inner { flex-direction: column; gap: 36px; }
+  .footer-links { flex-wrap: wrap; gap: 32px; }
+  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+  .audit-features { grid-template-columns: 1fr; }
+  .hero-buttons { flex-direction: column; width: 100%; }
+  .btn-primary, .btn-secondary { width: 100%; text-align: center; }
+  .hero-logo-main { width: 200px; }
+}
+@media (max-width: 600px) {
+  section { padding: 80px 20px; }
+  .process-steps { grid-template-columns: 1fr; }
+  .audit-card { padding: 36px 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <img src="/logo-transparent.png" alt="303 Creative Agency" class="nav-logo">
+  <ul class="nav-links">
+    <li><a href="#nosotros">Nosotros</a></li>
+    <li><a href="#proceso">Proceso</a></li>
+    <li><a href="#proyectos">Proyectos</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#auditoria">Auditoría</a></li>
+  </ul>
+  <a href="#auditoria" class="nav-cta">Solicitar Auditoría</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero noise-bg">
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+
+  <div class="hero-manifesto">
+    <div class="manifesto-line reveal-hero reveal-hero-1">
+      <span class="strikethrough">Be ordinary.</span>
+    </div>
+    <div class="manifesto-line reveal-hero reveal-hero-2">
+      <span class="manifesto-bold">Be <em>creative.</em></span>
+    </div>
+  </div>
+
+  <div class="hero-divider reveal-hero reveal-hero-3"></div>
+
+  <img src="/logo-transparent.png" alt="303 Creative Agency" class="hero-logo-main">
+
+  <p class="hero-sub">Estrategia, identidad visual y percepción de alto nivel<br>para negocios que quieren crecer con dirección.</p>
+
+  <div class="hero-buttons">
+    <a href="#servicios" class="btn-primary"><span>Ver Planes</span></a>
+    <a href="#auditoria" class="btn-secondary">Solicitar Auditoría — $5</a>
+  </div>
+  <div class="hero-scroll"><span>Scroll</span><div class="scroll-line"></div></div>
+</section>
+
+<!-- ABOUT / NOSOTROS -->
+<section class="about" id="nosotros">
+  <div class="section-inner">
+    <div class="about-content">
+      <div class="section-tag reveal">Nosotros</div>
+      <h2 class="section-title reveal">No somos otra agencia.<br>Somos una firma creativa<br>con dirección.</h2>
+      <p class="section-desc reveal">303 Creative Agency® transforma empresas invisibles en marcas con presencia profesional. Combinamos diseño estratégico, análisis de datos y automatización para generar resultados reales.</p>
+
+      <div class="about-values reveal">
+        <div class="about-value">
+          <span class="val-icon">◎</span>
+          <h4>Data-driven</h4>
+          <p>Toda decisión se basa en datos, no en intuición.</p>
+        </div>
+        <div class="about-value">
+          <span class="val-icon">◈</span>
+          <h4>Automatización</h4>
+          <p>Si se puede automatizar, lo automatizamos.</p>
+        </div>
+        <div class="about-value">
+          <span class="val-icon">◉</span>
+          <h4>Calidad > Cantidad</h4>
+          <p>5 proyectos impecables valen más que 20 mediocres.</p>
+        </div>
+        <div class="about-value">
+          <span class="val-icon">◇</span>
+          <h4>Speed to Value</h4>
+          <p>Propuesta en 48h vs. semanas de la competencia.</p>
+        </div>
+      </div>
+
+      <div class="about-mission reveal">
+        <p>Nuestra misión es democratizar el acceso a branding y marketing profesional para empresas que merecen <em>la misma calidad visual que las grandes corporaciones</em>.</p>
+      </div>
+    </div>
+
+    <div class="about-visual reveal">
+      <div class="about-orb-bg"></div>
+      <div class="about-glass-card">
+        <div class="stat">
+          <div class="stat-num">5+</div>
+          <div class="stat-label">Nichos dominados en Miami</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">48h</div>
+          <div class="stat-label">Tiempo de propuesta</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">0-100</div>
+          <div class="stat-label">Sistema de scoring propietario</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">$800+</div>
+          <div class="stat-label">Paquetes accesibles desde</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="problem noise-bg" id="problema">
+  <div class="section-inner">
+    <div class="section-tag reveal">El problema</div>
+    <h2 class="section-title reveal">Tu negocio funciona.<br>Pero no se siente como una marca.</h2>
+    <div class="problem-grid">
+      <div class="problem-card reveal reveal-delay-1">
+        <span class="num">01</span>
+        <h3>Publicas, pero no generas deseo</h3>
+        <p>Tienes contenido activo, pero tu audiencia no conecta ni confía lo suficiente para comprar.</p>
+      </div>
+      <div class="problem-card reveal reveal-delay-2">
+        <span class="num">02</span>
+        <h3>Tu imagen no refleja tu valor</h3>
+        <p>Tu identidad visual no comunica lo que realmente vales ni lo que podrías cobrar.</p>
+      </div>
+      <div class="problem-card reveal reveal-delay-3">
+        <span class="num">03</span>
+        <h3>Sin dirección estratégica</h3>
+        <p>Tomas decisiones de marketing sin un sistema claro. Inviertes tiempo sin retorno medible.</p>
+      </div>
+      <div class="problem-card reveal reveal-delay-4">
+        <span class="num">04</span>
+        <h3>Te ves como todos los demás</h3>
+        <p>No tienes diferenciación real. Tu competencia se ve igual o mejor, aunque su servicio sea inferior.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTION -->
+<section class="solution">
+  <div class="section-inner">
+    <div class="section-tag reveal">La solución</div>
+    <h2 class="section-title reveal">No solo diseñamos.<br>Construimos sistemas de marca.</h2>
+    <p class="section-desc reveal">THE303 combina estrategia, diseño y datos para que tu negocio se vea, se entienda y se venda como una marca de alto nivel.</p>
+    <div class="pillars">
+      <div class="pillar reveal reveal-delay-1">
+        <div class="pillar-icon">◎</div>
+        <h3>Estrategia</h3>
+        <p>Diagnóstico basado en datos, posicionamiento claro y dirección de marca con propósito comercial.</p>
+      </div>
+      <div class="pillar reveal reveal-delay-2">
+        <div class="pillar-icon">◈</div>
+        <h3>Identidad Visual</h3>
+        <p>Diseño que eleva la percepción de valor: logo, paleta, tipografía y sistema visual coherente.</p>
+      </div>
+      <div class="pillar reveal reveal-delay-3">
+        <div class="pillar-icon">◉</div>
+        <h3>Contenido & Percepción</h3>
+        <p>Dirección creativa y contenido estratégico que genera confianza, autoridad y deseo de compra.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="proceso">
+  <div class="section-inner">
+    <div class="section-tag reveal">Cómo trabajamos</div>
+    <h2 class="section-title reveal">Un sistema,<br>no un servicio suelto.</h2>
+    <p class="section-desc reveal">Cada proyecto sigue una estructura clara que garantiza resultados, no solo entregables bonitos.</p>
+    <div class="process-steps">
+      <div class="step reveal reveal-delay-1">
+        <div class="step-num">01</div>
+        <h4>Diagnóstico</h4>
+        <p>Analizamos tu marca con un scoring de 0 a 100 en identidad, presencia, posicionamiento y consistencia.</p>
+      </div>
+      <div class="step reveal reveal-delay-2">
+        <div class="step-num">02</div>
+        <h4>Dirección</h4>
+        <p>Definimos la estrategia visual y comercial que tu marca necesita para diferenciarse y escalar.</p>
+      </div>
+      <div class="step reveal reveal-delay-3">
+        <div class="step-num">03</div>
+        <h4>Diseño</h4>
+        <p>Creamos cada pieza con intención: logo, web, contenido, templates — todo alineado a la estrategia.</p>
+      </div>
+      <div class="step reveal reveal-delay-4">
+        <div class="step-num">04</div>
+        <h4>Crecimiento</h4>
+        <p>Implementamos, medimos y optimizamos. Tu marca evoluciona con datos, no con suposiciones.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO / CATÁLOGO -->
+<section class="portfolio" id="proyectos">
+  <div class="section-inner">
+    <div class="section-tag reveal">Lo que hacemos</div>
+    <h2 class="section-title reveal">Servicios que transforman<br>negocios en marcas.</h2>
+    <p class="section-desc reveal">Cada servicio está diseñado para resolver un problema real. Esto es lo que podemos hacer por tu marca.</p>
+    <div class="cases-grid">
+      <a href="/branding.html" class="case-card reveal reveal-delay-1" style="text-decoration:none">
+        <div class="case-inner-orb"></div>
+        <div class="case-deco">01</div>
+        <div class="case-overlay case-overlay-visible">
+          <span>Identidad</span>
+          <h3>Branding Completo</h3>
+          <p>Logo, paleta, tipografía, guidelines — todo el sistema visual de tu marca desde cero.</p>
+        </div>
+      </a>
+      <a href="/web-design.html" class="case-card reveal reveal-delay-2" style="text-decoration:none">
+        <div class="case-inner-orb"></div>
+        <div class="case-deco">02</div>
+        <div class="case-overlay case-overlay-visible">
+          <span>Digital</span>
+          <h3>Diseño Web Premium</h3>
+          <p>Sitios web que convierten visitantes en clientes. Rápidos, modernos y optimizados.</p>
+        </div>
+      </a>
+      <a href="/social-media.html" class="case-card reveal reveal-delay-3" style="text-decoration:none">
+        <div class="case-inner-orb"></div>
+        <div class="case-deco">03</div>
+        <div class="case-overlay case-overlay-visible">
+          <span>Contenido</span>
+          <h3>Social Media & Content</h3>
+          <p>Estrategia de contenido, dirección creativa y gestión de redes que generan autoridad.</p>
+        </div>
+      </a>
+      <a href="/marketing.html" class="case-card reveal reveal-delay-4" style="text-decoration:none">
+        <div class="case-inner-orb"></div>
+        <div class="case-deco">04</div>
+        <div class="case-overlay case-overlay-visible">
+          <span>Crecimiento</span>
+          <h3>Marketing & Automatización</h3>
+          <p>Campañas, email marketing, CRM y automatización para escalar tu negocio.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section class="social-proof noise-bg">
+  <div class="section-inner">
+    <div class="section-tag reveal">Resultados</div>
+    <h2 class="section-title reveal" style="color:var(--white)">Marcas que confían<br>en nuestro proceso.</h2>
+    <div class="metrics reveal">
+      <div class="metric-item"><div class="number">50+</div><div class="label">Marcas transformadas</div></div>
+      <div class="metric-item"><div class="number">95%</div><div class="label">Retención de clientes</div></div>
+      <div class="metric-item"><div class="number">3x</div><div class="label">Percepción de valor promedio</div></div>
+    </div>
+    <div class="testimonial-area reveal">
+      <p class="testimonial-quote">THE303 no solo cambió nuestra imagen, cambió cómo nos perciben nuestros clientes. Ahora cobramos lo que realmente valemos.</p>
+      <div class="testimonial-author">— Cliente, Catering & Eventos</div>
+      <div class="testimonial-role">Miami, FL</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES / PRICING -->
+<section class="services" id="servicios">
+  <div class="section-inner">
+    <div class="section-tag reveal">Paquetes</div>
+    <h2 class="section-title reveal">Elige el nivel que<br>tu marca necesita.</h2>
+    <p class="section-desc reveal">Sin contratos eternos. Cada dólar trabaja. Mes a mes, sin sorpresas.</p>
+    <div class="services-grid">
+      <div class="service-item reveal reveal-delay-1">
+        <span class="service-label">Esencial</span>
+        <h3>Starter</h3>
+        <div class="service-price">$897<span>/mes</span></div>
+        <p>Los fundamentales para construir una presencia profesional desde cero.</p>
+        <ul class="service-features">
+          <li>Auditoría + Scoring 0-100</li>
+          <li>Logo + Kit de identidad visual</li>
+          <li>Setup de redes sociales</li>
+          <li>12 posts/mes con diseño</li>
+          <li>1 sesión estratégica/mes</li>
+          <li>Reporte mensual</li>
+        </ul>
+        <a href="https://buy.stripe.com/5kQ7sMcWF8sm6U01H4cwg01" target="_blank" class="btn-primary btn-full"><span>Comenzar con Starter</span></a>
+      </div>
+      <div class="service-item service-item-featured reveal reveal-delay-2">
+        <div class="service-badge">Más popular</div>
+        <span class="service-label">Crecimiento</span>
+        <h3>Growth</h3>
+        <div class="service-price">$1,897<span>/mes</span></div>
+        <p>Presencia digital completa que genera clientes, no solo likes.</p>
+        <ul class="service-features">
+          <li>Todo de Starter +</li>
+          <li>Website profesional</li>
+          <li>20 posts/mes + stories</li>
+          <li>Email marketing + sequences</li>
+          <li>SEO on-page</li>
+          <li>2 sesiones estratégicas/mes</li>
+        </ul>
+        <a href="https://buy.stripe.com/00w9AUe0JgYSdio1H4cwg02" target="_blank" class="btn-primary btn-full"><span>Comenzar con Growth</span></a>
+      </div>
+      <div class="service-item reveal reveal-delay-3">
+        <span class="service-label">Escala</span>
+        <h3>Premium</h3>
+        <div class="service-price">$2,897<span>/mes</span></div>
+        <p>Marketing integral que convierte tu negocio en una máquina de ventas.</p>
+        <ul class="service-features">
+          <li>Todo de Growth +</li>
+          <li>4 reels + 1 video largo/mes</li>
+          <li>Paid Ads (Meta + Google)</li>
+          <li>Automatización + CRM</li>
+          <li>Reportes semanales</li>
+          <li>2 sesiones estratégicas/mes</li>
+        </ul>
+        <a href="https://buy.stripe.com/8x2eVe4q9bEy0vCfxUcwg03" target="_blank" class="btn-primary btn-full"><span>Comenzar con Premium</span></a>
+      </div>
+    </div>
+
+    <!-- TRANSFORMATION CARD -->
+    <div class="transformation-card reveal">
+      <div class="transformation-glow"></div>
+      <div class="transformation-content">
+        <span class="service-label" style="-webkit-text-fill-color: var(--accent-light);">Dominio total</span>
+        <h3>Transformation</h3>
+        <div class="service-price" style="color: var(--white);">$3,897<span style="color: rgba(255,255,255,0.4);">/mes</span></div>
+        <p>Para empresas listas para dominar su nicho por completo. Todo de Premium más rebranding, video premium (8 reels + 2 largos), funnel completo, chatbot avanzado, SMS marketing y sesiones semanales 1-on-1.</p>
+        <a href="https://buy.stripe.com/14A4gA2i1aAucekadAcwg04" target="_blank" class="btn-transformation"><span>Dominar mi nicho</span></a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- AUDIT -->
+<section class="audit" id="auditoria">
+  <div class="section-inner">
+    <div class="section-tag reveal">Empieza aquí</div>
+    <h2 class="section-title reveal">Descubre qué está frenando<br>el crecimiento de tu marca.</h2>
+    <div class="audit-card reveal">
+      <div class="audit-price">$5 <span>USD</span></div>
+      <h3>Auditoría de Marketing</h3>
+      <p>Un análisis profesional con scoring de 0 a 100 que te muestra exactamente qué corregir para aumentar tu percepción de valor y tus ventas.</p>
+      <ul class="audit-features">
+        <li>Análisis de identidad visual</li>
+        <li>Evaluación de presencia digital</li>
+        <li>Scoring de posicionamiento</li>
+        <li>Diagnóstico de consistencia</li>
+        <li>Recomendaciones accionables</li>
+        <li>Plan de mejora personalizado</li>
+      </ul>
+
+      <!-- FORMULARIO -->
+      <form class="audit-form" id="auditForm" action="https://formsubmit.co/hello@the303creative.com" method="POST">
+        <input type="hidden" name="_subject" value="Nueva solicitud de auditoría - THE303">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="box">
+        <input type="hidden" name="_next" value="https://buy.stripe.com/cNi4gA5udaAu6U0clIcwg00">
+        <div class="form-row">
+          <input type="text" name="nombre" placeholder="Tu nombre" required class="form-input">
+          <input type="text" name="negocio" placeholder="Nombre del negocio" required class="form-input">
+        </div>
+        <div class="form-row">
+          <input type="email" name="email" placeholder="Email" required class="form-input">
+          <input type="text" name="instagram" placeholder="Instagram o web" class="form-input">
+        </div>
+        <button type="submit" class="btn-primary btn-full"><span>Solicitar Mi Auditoría — $5 USD</span></button>
+        <p class="form-note">Al enviar, serás redirigido a nuestra pasarela segura de pago.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta noise-bg">
+  <div class="final-cta-orb"></div>
+  <div class="section-inner reveal">
+    <h2>Tu negocio no necesita<br>más publicaciones.<br>Necesita <em>dirección.</em></h2>
+    <p>Deja de improvisar. Construye una marca que comunique, posicione y venda con intención.</p>
+    <a href="#auditoria" class="btn-primary-light">Comenzar Ahora</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <img src="/logo-white.png" alt="303 Creative Agency" class="footer-logo">
+      <p class="footer-tagline">Branding y marketing estratégico para negocios que quieren ser marcas.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Navegar</h4>
+        <a href="#">Inicio</a><a href="#nosotros">Nosotros</a>
+        <a href="#proyectos">Proyectos</a><a href="#servicios">Servicios</a>
+      </div>
+      <div class="footer-col">
+        <h4>Paquetes</h4>
+        <a href="https://buy.stripe.com/5kQ7sMcWF8sm6U01H4cwg01" target="_blank">Starter — $897/mes</a>
+        <a href="https://buy.stripe.com/00w9AUe0JgYSdio1H4cwg02" target="_blank">Growth — $1,897/mes</a>
+        <a href="https://buy.stripe.com/8x2eVe4q9bEy0vCfxUcwg03" target="_blank">Premium — $2,897/mes</a>
+        <a href="#auditoria">Auditoría — $5</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <a href="#">hello@the303.com</a><a href="#">Miami, FL</a>
+        <a href="#">Agendar Llamada</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 303 Creative Agency®. Todos los derechos reservados.</span>
+    <div class="footer-social">
+      <a href="#">Instagram</a><a href="#">LinkedIn</a><a href="#">Behance</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal with stagger
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+reveals.forEach(el => observer.observe(el));
+
+// Nav scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  });
+});
+
+// 3D tilt on cards (desktop only)
+if (window.innerWidth > 900) {
+  document.querySelectorAll('.problem-card, .pillar, .service-item, .case-card, .transformation-card, .audit-card').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      card.style.transform = `translateY(-6px) rotateX(${-y * 6}deg) rotateY(${x * 6}deg)`;
+    });
+    card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+  });
+}
+
+// Parallax orbs on scroll
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY;
+  document.querySelectorAll('.hero-orb').forEach((orb, i) => {
+    const speed = i === 0 ? 0.05 : -0.03;
+    orb.style.transform = `translateY(${scrollY * speed}px)`;
+  });
+});
+</script>
+
+</body>
+</html>
